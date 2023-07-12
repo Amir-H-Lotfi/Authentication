@@ -1,0 +1,13 @@
+GET localhost:8080/user/admin
+
+###
+GET localhost:8080/user/default/gmr?username=CUSTOMER0USERNAME
+
+
+###
+PUT localhost:8080/user/premium/pmp?username=CUSTOMER1USERNAME
+Content-Type: application/json
+
+{
+  "resource" : "message"
+}

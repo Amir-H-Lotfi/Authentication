@@ -1,0 +1,44 @@
+server:
+  port: 8080
+
+spring:
+
+  datasource:
+    username: username
+    password: password
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+
+  sql:
+    init:
+      mode: always
+      continue-on-error: false
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        type: trace
+#
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    spring :
+      jpa :
+        show-sql : INFO
+    org:
+      springframework:
+        web: DEBUG
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+        SQL: DEBUG
+

@@ -1,0 +1,39 @@
+server:
+  port: 8080
+api:
+  user:
+    admin: /user/admin
+    default: /user/default
+    premium: /user/premium
+
+
+spring:
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: username
+    password: password
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+    generate-ddl: true
+
+  sql:
+    init:
+      encoding: UTF-8
+      mode: always
+      continue-on-error: false
+  h2:
+    console:
+      enabled: true
+      path: /h2Console
+logging:
+  level:
+    sql: info
+    web: info
+    root: info
+    com.site.jpa.service.abstracts: info
+    org.springframework.security.crypto.bcrypt: info
